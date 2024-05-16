@@ -1,0 +1,36 @@
+{block content}
+	<h1>Telefonní seznam</h1>
+
+	<div class="table table-striped">
+	<table border="2" style="width:35%; height:200px">
+		<thead>
+			<tr class="table-primary">
+				<th>Id</th>
+				<th>Jméno</th>
+				<th>Příjmení</th>
+				<th>Telefon</th>
+				<th>Edit</th>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach $seznam as $seznami}
+				<tr>
+					<td>{$seznami->id}</td>
+					<td>{$seznami->jmeno}</td>
+					<td>{$seznami->prijmeni}</td>
+					<td>{$seznami->telefon}</td>
+					<td><a n:href="Edit:edit $seznami->id"><button class="btn btn-primary">Edit</button></a></td>
+				</tr>
+			{/foreach}
+		</tbody>
+	</table>
+	</div>
+	<br>
+
+	{*<a n:href="Edit:create">Nový uživatel</a>*}
+	<br>
+	
+
+{/block}
+
+
